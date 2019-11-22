@@ -30,6 +30,5 @@ Was used to install Buster hosts.
 `-v $(pwd)/etc/dhcp/dhcpd.conf:/etc/dhcp/dhcpd.conf \`<br>
 `--net=host debian/netinstsrv`<br>
 
-or just
-`docker-compose up --build`
+    or just `docker-compose up --build`
 
