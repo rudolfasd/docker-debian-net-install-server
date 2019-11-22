@@ -8,10 +8,6 @@ RUN apt-get update && apt-get -y install \
     && rm -rf /tmp/* \
     && rm -rf /var/lib/apt/lists/*
 
+COPY ./entrypoint.sh /entrypoint.sh
 
-CMD echo "Start services" \
-    && /etc/init.d/tftpd-hpa start \
-    && /etc/init.d/nginx start \
-    && (/etc/init.d/isc-dhcp-server start || $TRUE) \
-    && tail -f /dev/null 
-    
+ENTRYPOINT ["/entrypoint.sh"]

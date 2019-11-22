@@ -19,9 +19,9 @@ Was used to install Buster hosts.
 `cd ./tftp && ln -s debian-installer/amd64/bootnetx64.efi bootnetx64.efi && cd ..`
 
 ## Run
-`docker build -t debian/netinstsrv .`
+1. `docker build -t debian/netinstsrv .`
 
-`docker run -d \`<br>
+2. `docker run -d \`<br>
 `-v $(pwd)/html:/var/www/html \`<br>
 `-v $(pwd)/tftp:/srv/tftp \`<br>
 `-v $(pwd)/leases:/var/lib/dhcp \`<br>
@@ -29,3 +29,6 @@ Was used to install Buster hosts.
 `-v $(pwd)/etc/default/isc-dhcp-server:/etc/default/isc-dhcp-server \`<br>
 `-v $(pwd)/etc/dhcp/dhcpd.conf:/etc/dhcp/dhcpd.conf \`<br>
 `--net=host debian/netinstsrv`<br>
+or
+`docker-compose up --build`
+

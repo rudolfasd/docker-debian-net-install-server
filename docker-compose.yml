@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  instsrv:
+    image: debian/netinstsrv
+    network_mode: "host"
+    volumes:
+      - ./html:/var/www/html
+      - ./tftp:/srv/tftp
+      - ./leases:/var/lib/dhcp
+      - ./etc/default/tftpd-hpa:/etc/default/tftpd-hpa
+      - ./etc/default/isc-dhcp-server:/etc/default/isc-dhcp-server
+      - ./etc/dhcp/dhcpd.conf:/etc/dhcp/dhcpd.conf
