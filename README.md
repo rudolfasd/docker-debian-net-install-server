@@ -29,6 +29,7 @@ Was used to install Buster hosts.
 `-v $(pwd)/etc/default/isc-dhcp-server:/etc/default/isc-dhcp-server \`<br>
 `-v $(pwd)/etc/dhcp/dhcpd.conf:/etc/dhcp/dhcpd.conf \`<br>
 `--net=host debian/netinstsrv`<br>
-or
+
+or just
 `docker-compose up --build`
 
